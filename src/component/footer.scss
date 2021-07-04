@@ -1,0 +1,23 @@
+$red: red;
+$black: black;
+
+$text-align:center;
+
+footer {
+    background-color:$black ;
+ text-align: $text-align;
+ color: $red;
+
+}
+
+footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: 30px;
+    height: 30px;
+    
+    // color: white;
+    text-align:  $text-align;
+  }
