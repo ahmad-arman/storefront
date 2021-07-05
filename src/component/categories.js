@@ -5,7 +5,7 @@ import {food,electronics} from '../store/categories'
 const Category = (props) =>{
     return (
         <>
-        <button type="button" onClick={()=>{props.food('food')}}> food </button>
+        <button type="button" onClick={ ()=>{props.food('food')}}> food </button>
         <button type="button" onClick={()=>{props.electronics('electronics')}}>electronics </button>
         </>
     )
