@@ -15,11 +15,13 @@ import store from './store/'
 
 ReactDOM.render(
   <React.StrictMode>
+     <Header />
     <Provider  store = {store}>
-    <Header />
+   
     <App />
-    <Footer />
+    
     </Provider>
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
