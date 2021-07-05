@@ -13,8 +13,8 @@ import reducer from './categories';
 // and we need to use combineReducers, since Redux only work with one root-reducer
 let reducers = combineReducers({ category: reducer });
 
+console.log(reducers,'reducers')
 
-console.log(reducers,'reducer')
 
 const store = () => {
     return createStore(reducers,composeWithDevTools() );

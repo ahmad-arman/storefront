@@ -1,10 +1,11 @@
 import './header.scss';
+import AppBar from '@material-ui/core/AppBar';
 
 // import { Link } from 'react-router-dom';
 
 const Header = ()=>{
     return (
-        <header>
+        <AppBar>
             <h1>Sort Front</h1>
 
             <nav>
@@ -25,7 +26,7 @@ const Header = ()=>{
            
 
            
-        </header>
+        </AppBar>
 
     );
         
