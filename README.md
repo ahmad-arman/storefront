@@ -1,8 +1,8 @@
 ## deploy Netlify  
-[deploy on netlify](https://csb-cd6vq.netlify.app/)
+[deploy on netlify](https://csb-xt0p2.netlify.app/)
 
 ## uml 
-![uml]()
+![uml](./uml.jpg)
 
 
 # Getting Started with Create React App
