@@ -1,12 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import {food,electronics} from '../store/categories'
+import Button from "@material-ui/core/Button";
+import CardActionArea from "@material-ui/core/CardActionArea";
+
+
+
+
+
 
 const Category = (props) =>{
+    console.log(props,'##########3')
     return (
         <>
-        <button type="button" onClick={ ()=>{props.food('food')}}> food </button>
-        <button type="button" onClick={()=>{props.electronics('electronics')}}>electronics </button>
+  
+
+        <Button type="button" onClick={ ()=>{props.food('food')}}> food    </Button>
+       
+        <Button type="button" onClick={()=>{props.electronics('electronics')}}>electronics </Button>
+      
+      
+    
+       
         </>
     )
 }
