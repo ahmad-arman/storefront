@@ -2,12 +2,19 @@ import React from 'react';
 
 import {connect} from 'react-redux'
 
-const Product = props => {
-    return (
-        <section>
-            {console.log(props,'@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')}
-        </section>
-    )
+
+
+const Product =  props => {
+ 
+   
+        return (
+            <section>
+                {console.log( props,'@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')}
+            </section>
+        )
+  
+
+   
 
 }
 
