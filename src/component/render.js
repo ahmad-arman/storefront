@@ -85,32 +85,32 @@ function render(props) {
        
         <Container maxWidth="sm">
           <Typography component="h1" variant="h2" className={classes.productName} align="center" color="textPrimary" gutterBottom>
-            {ahmad.name}
+            {ahmad ? ahmad.name : null}
           </Typography>
           <Typography variant="h5" align="center" color="textSecondary" paragraph>
-            {ahmad.description}
+            { ahmad?ahmad.description:null}
           </Typography>
   
           <div className={classes.layout}>
             <Paper>
               <Grid container className={classes.data}>
                 <Grid item xs={12}>
-                  <img alt={ahmad.name} className={classes.image} src={`https://source.unsplash.com/random?${ahmad.name}`} />
+                  <img alt= {ahmad ? ahmad.name : null} className={classes.image} src={`https://source.unsplash.com/random?${ahmad.name}`} />
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="h5" color="textSecondary" paragraph>
-                    In Stock: <strong>{ahmad.inStock}</strong>
+                    In Stock: <strong>{ahmad?ahmad.inStock:null}</strong>
                   </Typography>
                 </Grid>
                 <Grid item xs={6} className={classes.price}>
                   <Typography variant="h5" paragraph>
-                    ${ahmad.price}
+                    ${ahmad?ahmad.price:null}
                   </Typography>
                 </Grid>
               </Grid>
             </Paper>
   
-            <When condition={ahmad.inStock >= 1}>
+            <When condition={ahmad ?ahmad.inStock >= 1 :null}>
               <Button className={classes.buyButton} variant="contained" color="primary"onClick={ ()=>{props.cart1(ahmad)}}>Buy</Button>
             </When>
   
