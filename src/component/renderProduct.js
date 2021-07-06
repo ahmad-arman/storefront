@@ -1,6 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 // import Card from "@material-ui/core/Card";
 // import CardActionArea from "@material-ui/core/CardActionArea";
@@ -12,7 +13,8 @@ import { makeStyles } from "@material-ui/core/styles";
 // import Typography from "@material-ui/core/Typography";
 // import Grid from '@material-ui/core/Grid';
 // import {food,electronics} from '../store/categories'
-import {cart1,remove} from '../store/simpleCart'
+import { cart1, remove } from "../store/simpleCart";
+import { details } from '../store/details';
 import "./cards.scss";
 
 import Paper from "@material-ui/core/Paper";
@@ -33,13 +35,17 @@ const useStyles = makeStyles((theme) => ({
 
 const Product = (props) => {
   const classes2 = useStyles();
-  console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4$$$$$$$',props,'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+  console.log(
+    "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4$$$$$$$",
+    props,
+    "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+  );
   return (
     <>
       <main>
         <div id="card">
           <div>
-            {props.category.type ? (
+            {props.category ? (
               <section>
                 {/* {console.log(props.category.type)} */}
                 <h1 id="category"> {props.category.type}</h1>
@@ -49,7 +55,7 @@ const Product = (props) => {
 
             <div className={classes2.root}>
               <Grid container spacing={3}>
-                {props.category.data
+                {props.category
                   ? props.category.data.map((val) => (
                       <Grid item xs={3}>
                         <Paper className={classes2.paper}>
@@ -69,16 +75,24 @@ const Product = (props) => {
                                     size="small"
                                     color="primary"
                                     onClick={() => {
-                                     
                                       props.cart1(val);
-                                  
+
                                       console.log(val, "val");
                                     }}
                                   >
                                     Add To Cart
                                   </Button>
 
-                                  <Button size="small" color="primary">
+                                  <Button
+                                    size="small"
+                                    color="primary"
+                                    component={Link}
+                                    to={`/product/${val._id}`}
+                                    onClick={() => {
+                                      props.details(val);
+                                      console.log(val, "val2");
+                                    }}
+                                  >
                                     View Detail
                                   </Button>
                                 </CardContent>
@@ -96,18 +110,13 @@ const Product = (props) => {
       </main>
     </>
   );
-
-  
 };
 
 const mapStateToProps = (state) => ({
   cart: state.cart ? state.cart : null,
   category: state.category ? state.category : null,
-  
 });
 
-
-const mapDispatchToProps = { cart1 ,remove };
-
+const mapDispatchToProps = { cart1, remove, details };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

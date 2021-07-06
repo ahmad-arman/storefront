@@ -13,7 +13,7 @@ const Category = (props) =>{
     // console.log(props,'##########3')
     return (
         <>
-  
+    <h1> Browse our Categories </h1>
 
         <Button type="button" onClick={ ()=>{props.food('food') 
         
