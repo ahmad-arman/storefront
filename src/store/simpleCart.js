@@ -36,7 +36,7 @@ export default function reducer  (state= initialState , action) {
 
         case 'add':
            console.log('inside add')
-   
+        //    initialState.data =[...state.data ,payload]
             return {data :[...state.data ,payload] }
            
 
@@ -51,15 +51,15 @@ export default function reducer  (state= initialState , action) {
 
 export const cart1 = (payload) =>  (dispatch,state) =>{
 
-  let body= {
-    inStock: payload.inStock -1 
-  }
-   return superagent.put(`https://api-js401.herokuapp.com/api/v1/products/${payload._id}`).send(body)
+ 
+    payload.inStock = payload.inStock -1 
+  
+   return superagent.put(`https://api-js401.herokuapp.com/api/v1/products/${payload._id}`).send(payload)
    .then(res => {
        dispatch({
            
         type: 'add',
-        payload:res.body
+        payload:payload
 
        })
    })
@@ -76,15 +76,14 @@ export const cart1 = (payload) =>  (dispatch,state) =>{
 export const remove = (payload) =>(dispatch,state) => {
     //  console.log(data,'&&&&&&');
 
-    let body= {
-        inStock: payload.inStock +1 
-      }
-       return superagent.put(`https://api-js401.herokuapp.com/api/v1/products/${payload._id}`).send(body)
+    payload.inStock =payload.inStock +1
+     
+       return superagent.put(`https://api-js401.herokuapp.com/api/v1/products/${payload._id}`).send(payload)
        .then(res => {
            dispatch({
                
             type: 'remove',
-            payload:res.body
+            payload:payload
     
            })
        })

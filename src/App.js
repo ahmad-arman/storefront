@@ -10,7 +10,6 @@ import CartAll from './component/CartAll'
 
 import { BrowserRouter as Router, HashRouter, MemoryRouter } from 'react-router-dom';
 
-
 function App() {
  return (
     
