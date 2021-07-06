@@ -36,7 +36,7 @@ export default function reducer  (state= initialState , action) {
 
         case 'add':
            console.log('inside add')
-   
+        //    initialState.data =[...state.data ,payload]
             return {data :[...state.data ,payload] }
            
 
