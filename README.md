@@ -1,6 +1,6 @@
 ## deploy Netlify  
 
-[deploy on netlify for  lab 38 ](https://60e4d7a4b72207524e42d1ac--store-ahmad2.netlify.app/)
+[deploy on netlify for  lab 38 ](https://60e4e55016045600c26399fe--store-ahmad2.netlify.app/)
 
 [deploy on netlify for lab 37](https://storeahmad.netlify.app/)
 
