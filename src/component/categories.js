@@ -10,12 +10,16 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 
 
 const Category = (props) =>{
-    console.log(props,'##########3')
+    // console.log(props,'##########3')
     return (
         <>
   
 
-        <Button type="button" onClick={ ()=>{props.food('food')}}> food    </Button>
+        <Button type="button" onClick={ ()=>{props.food('food') 
+        
+        ; return false
+        
+        }}> food    </Button>
        
         <Button type="button" onClick={()=>{props.electronics('electronics')}}>electronics </Button>
       

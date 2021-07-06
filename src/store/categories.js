@@ -70,13 +70,8 @@ let initialState = {
 export default (state = initialState, action) => {
     let { type,payload} =  action;
 
-    console.log(state,'-----------------------')
-//     console.log(action)
-//    await superagent.get('https://api-js401.herokuapp.com/api/v1/products')
+    // console.log(state,'-----------------------')
 
-    // .then(result => {
-        
-    //  let   data =payload.body.results
        
 
    
