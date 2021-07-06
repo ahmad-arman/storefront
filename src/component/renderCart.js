@@ -3,6 +3,9 @@ import Button from "@material-ui/core/Button";
 import { connect } from 'react-redux';
 import {cart1,remove} from '../store/simpleCart'
 import './renderCart.scss'
+import { Link } from 'react-router-dom';
+import { details } from '../store/details';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 const Cart = props =>{
@@ -20,18 +23,31 @@ const Cart = props =>{
         
         <>
         <div id="cartcon">
-        <h4 id='cart'>Cart ({ props.cart? props.cart.data.length : 0})</h4>
+      {/* <Button component = {Link} to ='/cart'    id='cart' >Cart ({ props.cart? props.cart.data.length : 0})</Button> */}
         <ul className="id">
         { props.cart? props.cart.data.map(val =>
      
             <>
             <div id="list">
-            <li key={val._id}>{val.name} 
+           
+            <Button  component={Link}
+                                    to={`/product/${val._id}`}
+                                    onClick={() => {
+                                      props.details(val);
+                                      console.log(val, "val2");
+                                    }}>  <li key={val._id}> {val.name} 
+                                     </li>
+                                      </Button> 
+                                    
             <Button onClick={ ()=>{props.remove(val)}} > X </Button>
             <Button onClick={ ()=>{props.cart1(val)}}> + </Button>
-            </li>
+
+           
+         
+           
             </div>
             </>
+
 
       
            
@@ -48,6 +64,6 @@ const mapStateToProps = state =>({
    
 })
 
-const mapDispatchToProps = {cart1, remove };
+const mapDispatchToProps = {cart1, remove ,details};
 
 export default connect(mapStateToProps,mapDispatchToProps)(Cart)

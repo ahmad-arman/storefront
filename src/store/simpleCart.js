@@ -1,4 +1,4 @@
-
+import superagent from 'superagent';
 
 console.log('مشان الله يا ابن الناس')
 
@@ -49,29 +49,53 @@ export default function reducer  (state= initialState , action) {
 }
 
 
-export const cart1 = (payload) => {
-//  console.log(data,'&&&&&&');
-  
-    return  {
+export const cart1 = (payload) =>  (dispatch,state) =>{
+
+  let body= {
+    inStock: payload.inStock -1 
+  }
+   return superagent.put(`https://api-js401.herokuapp.com/api/v1/products/${payload._id}`).send(body)
+   .then(res => {
+       dispatch({
+           
         type: 'add',
-        payload:payload,
+        payload:res.body
+
+       })
+   })
+    // return  {
+    //     type: 'add',
+    //     payload:payload,
        
      
         
-    }
+    // }
 
 };
 
-export const remove = (payload) => {
+export const remove = (payload) =>(dispatch,state) => {
     //  console.log(data,'&&&&&&');
-      
-        return  {
+
+    let body= {
+        inStock: payload.inStock +1 
+      }
+       return superagent.put(`https://api-js401.herokuapp.com/api/v1/products/${payload._id}`).send(body)
+       .then(res => {
+           dispatch({
+               
             type: 'remove',
-            payload:payload,
+            payload:res.body
+    
+           })
+       })
+      
+        // return  {
+        //     type: 'remove',
+        //     payload:payload,
            
          
             
-        }
+        // }
     
     };
 
