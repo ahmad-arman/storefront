@@ -1,7 +1,13 @@
 ## deploy Netlify  
+
+[deploy on netlify for lab 37]()
+
 [deploy on netlify](https://csb-xt0p2.netlify.app/)
 
 ## uml 
+
+![uml](./uml37.jpg)
+
 ![uml](./uml.jpg)
 
 

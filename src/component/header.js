@@ -1,11 +1,12 @@
 import './header.scss';
 import AppBar from '@material-ui/core/AppBar';
+import Cart from '../component/renderCart';
 
 // import { Link } from 'react-router-dom';
 
 const Header = ()=>{
     return (
-        <AppBar>
+        <header>
             <h1>Sort Front</h1>
 
             <nav>
@@ -22,11 +23,12 @@ const Header = ()=>{
                     </li>
                 </ul> */}
             </nav>
+            <Cart />
 
            
 
            
-        </AppBar>
+        </header>
 
     );
         
