@@ -60,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
      
      let items = props.cart.data
      const total = items?items.reduce((ttl, product) => ttl + product.price, 0):null;
+
+
+
     //  let count =0 ;
     return (
         
@@ -136,7 +139,7 @@ const useStyles = makeStyles((theme) => ({
  
            <Grid container alignItems="center" justify="center" spacing={5}>
              <Grid item>
-               <Button variant="contained" color="primary">Place Your Order</Button>
+               <Button variant="contained" color="primary" onClick={()=> alert('Thank you for your purchase')}>Place Your Order</Button>
              </Grid>
            </Grid>
          </Paper>

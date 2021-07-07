@@ -1,9 +1,9 @@
-import { createStore, combineReducers ,applyMiddleware } from 'redux';
-import thunk from 'redux-thunk'
-
+// import { createStore, combineReducers ,applyMiddleware } from 'redux';
+// import thunk from 'redux-thunk'
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 // This dependency enables the Redux Dev Tools in your chrome browser
-import { composeWithDevTools } from 'redux-devtools-extension';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 
 // import counter from './votes';
 import reducer from './categories';
@@ -20,9 +20,12 @@ let reducers = combineReducers({ category: reducer ,cart: reducer2 ,detail: deta
 // console.log(reducers,'reducers')
 
 
-const store = () => {
-    return createStore(reducers,composeWithDevTools(applyMiddleware(thunk)) );
-}
+// const store = () => {
+//     return createStore(reducers,composeWithDevTools(applyMiddleware(thunk)) );
+// }
 
 
-export default store();
+// export default store();
+
+const store = configureStore({ reducer: reducers });
+export default store;

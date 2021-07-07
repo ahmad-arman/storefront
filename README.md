@@ -1,5 +1,6 @@
 ## deploy Netlify  
 
+[deploy on netlify for  lab 39 ](https://60e4e55016045600c26399fe--store-ahmad2.netlify.app/)
 [deploy on netlify for  lab 38 ](https://60e4e55016045600c26399fe--store-ahmad2.netlify.app/)
 
 [deploy on netlify for lab 37](https://storeahmad.netlify.app/)
@@ -7,6 +8,9 @@
 [deploy on netlify](https://csb-xt0p2.netlify.app/)
 
 ## uml 
+![uml](lab38.png)
+
+
 ![uml](lab38.png)
 
 ![uml](./uml37.jpg)

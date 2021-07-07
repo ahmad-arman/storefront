@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 const Product = (props) => {
   const classes2 = useStyles();
   console.log(
-    "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4$$$$$$$",
-    props,
-    "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    
+    props.details,
+    "ahmadahmad"
   );
   return (
     <>
@@ -55,8 +55,9 @@ const Product = (props) => {
 
             <div className={classes2.root}>
               <Grid container spacing={3}>
-                {props.category
-                  ? props.category.data.map((val) => (
+                {console.log(props,'amjadamjadamjad')}
+                {props.data.data
+                  ? props.data.data.map((val) => (
                       <Grid item xs={3}>
                         <Paper className={classes2.paper}>
                           <div key={val._id} id="card">
@@ -114,7 +115,7 @@ const Product = (props) => {
 
 const mapStateToProps = (state) => ({
   cart: state.cart ? state.cart : null,
-  category: state.category ? state.category : null,
+  data: state.category ? state.category : null,
 });
 
 const mapDispatchToProps = { cart1, remove, details };
