@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = (props)=>{
+  console.log( props.cart,'@@@props.cart')
 
     const classes = useStyles();
     return (
